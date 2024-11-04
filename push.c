@@ -1,30 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/02 14:45:49 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/04 16:12:14 by kgiraud          ###   ########.fr       */
+/*   Created: 2024/11/04 13:31:56 by kgiraud           #+#    #+#             */
+/*   Updated: 2024/11/04 13:32:16 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <unistd.h>
-# include <stdlib.h>
-
-typedef struct s_stack_node
-{
-	int				value;
-	struct s_stack_node	*prev;
-	struct s_stack_node	*next;
-}	t_stack_node;
-
-int		ft_atoi(char *s);
-void	append_node(t_stack_node **stack, int value);
-void	stack_init(t_stack_node **a, char **av);
-
-#endif
+#include "push_swap.h"
