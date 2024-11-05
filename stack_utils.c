@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:33:27 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/04 16:09:33 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/05 14:59:37 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	append_node(t_stack_node **stack, int value)
 	t_stack_node	*node;
 	t_stack_node	*last_node;
 
+	if (!stack)
+		return ;
 	node = (t_stack_node *)malloc(sizeof(t_stack_node));
 	if (!node)
 		return ;

@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:37:25 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/04 16:10:57 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/05 15:52:41 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,14 @@ void	stack_init(t_stack_node **a, char **av)
 
 	while (*av)
 	{
-		// ici faut checker si y'a erreur de syntax
+		if (syntax_error(*av))
+			error_free(a);
+
 		nb = ft_atoi(*av);
-		// ici faut checker que nb depasse pas int max et min
-		// ici faut checker si y'a des doublons
+		if (nb >= INT_MAX || nb <= INT_MIN)
+			error_free(a);
+		if (repetition_error(*a, nb))
+			error_free(a);
 		append_node(a, nb);
 		av++;
 	}
