@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:49:50 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/05 15:53:31 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/06 13:35:35 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,17 @@ int	main(int ac, char **av)
 		return (1);
 	av++;
 	stack_init(&stack_a, av);
+	print_stack(stack_a);
 	if (!stack_is_sorted(stack_a))
-		return (1); // *
-	printf("C'est trié"); // *
+	{
+		if (stack_len(stack_a) == 2)
+			sa(&stack_a);
+		/* else if (stack_len(stack_a) == 3)
+			// tiny_sort
+		else
+			// turk_algorithm */
+	}
+	print_stack(stack_a);
 	free_stack(&stack_a);
 	return (0);
 }

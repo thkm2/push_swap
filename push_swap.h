@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:45:49 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/05 15:24:37 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/06 13:17:12 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,24 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 }	t_stack_node;
 
-int		ft_atoi(char *s);
-void	append_node(t_stack_node **stack, int value);
-void	stack_init(t_stack_node **a, char **av);
+// error
 int		syntax_error(char *s);
 void	free_stack(t_stack_node **stack);
 int		repetition_error(t_stack_node *a, int nb);
-int		stack_is_sorted(t_stack_node *stack);
 void	error_free(t_stack_node **stack);
+
+// stack_init
+int		ft_atoi(char *s);
+void	stack_init(t_stack_node **a, char **av);
+
+// stack_utils
+void	append_node(t_stack_node **stack, int value);
+int		stack_len(t_stack_node *stack);
+int		stack_is_sorted(t_stack_node *stack);
+
+// swap
+void	sa(t_stack_node **stack_a);
+void	sb(t_stack_node **stack_b);
+void	ss(t_stack_node **stack_a, t_stack_node **stack_b);
 
 #endif

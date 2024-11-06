@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:33:27 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/05 14:59:37 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/06 12:47:55 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,32 @@ void	append_node(t_stack_node **stack, int value)
 		last_node->next = node;
 		node->prev = last_node;
 	}
+}
+
+int	stack_len(t_stack_node *stack)
+{
+	int	len;
+
+	len = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		len++;
+	}
+	return (len);
+}
+
+int	stack_is_sorted(t_stack_node *stack)
+{
+	if (!stack)
+		return (0);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
 }
