@@ -6,13 +6,13 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:49:50 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/06 19:19:47 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/06 22:25:34 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* #include <stdio.h>
+#include <stdio.h>
 void print_stack(t_stack_node *stack)
 {
 	if (!stack)
@@ -24,7 +24,7 @@ void print_stack(t_stack_node *stack)
 		printf("Value: %d\n", current->value);
 		current = current->next;
 	}
-} */
+}
 
 int	main(int ac, char **av)
 {
@@ -39,7 +39,7 @@ int	main(int ac, char **av)
 		return (1);
 	av++;
 	stack_init(&stack_a, av);
-	//print_stack(stack_a);
+	print_stack(stack_a);
 	if (!stack_is_sorted(stack_a))
 	{
 		if (stack_len(stack_a) == 2)
@@ -50,7 +50,7 @@ int	main(int ac, char **av)
 			// turk_algorithm
 			printf("en travaux...");
 	}
-	//print_stack(stack_a);
+	print_stack(stack_a);
 	free_stack(&stack_a);
 	return (0);
 }
