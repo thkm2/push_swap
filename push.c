@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:31:56 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/06 22:10:22 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/07 20:30:45 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,12 @@ void	push(t_stack_node **src, t_stack_node **dest)
 
 void	pa(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	pa(stack_b, stack_a);
+	push(stack_b, stack_a);
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack_node **stack_a, t_stack_node **stack_b)
 {
-	pa(stack_a, stack_b);
+	push(stack_a, stack_b);
 	write(1, "pb\n", 3);
 }

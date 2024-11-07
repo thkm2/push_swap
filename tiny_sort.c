@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:11:05 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/06 19:18:16 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/07 21:00:06 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,9 @@ void	tiny_sort(t_stack_node **stack)
 		rra(stack);
 	if ((*stack)->value > (*stack)->next->value)
 		sa(stack);
+}
+
+void	sort_five(t_stack_node **stack_a, t_stack_node **stack_b)
+{
+	
 }

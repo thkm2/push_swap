@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:45:49 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/06 22:12:10 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/07 21:10:51 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@
 typedef struct s_stack_node
 {
 	int					value;
-	int					index;
+	int					current_position;
+	int					above_median;
 	struct s_stack_node	*prev;
 	struct s_stack_node	*next;
 }	t_stack_node;
@@ -62,5 +63,8 @@ void			pb(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // tiny_sort
 void			tiny_sort(t_stack_node **stack);
+void			sort_five(t_stack_node **stack_a, t_stack_node **stack_b);
+
+// push swap command
 
 #endif
