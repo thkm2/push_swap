@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:45:49 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/07 22:16:55 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/08 12:25:23 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ typedef struct s_stack_node
 	struct s_stack_node	*next;
 }	t_stack_node;
 
+// à enlever !!!!!!
+# include <stdio.h>
+void print_stack(t_stack_node *stack);
+//
+
 // error
 int				syntax_error(char *s);
 void			free_stack(t_stack_node **stack);
@@ -44,6 +49,7 @@ t_stack_node	*find_last_node(t_stack_node *stack_node);
 void			append_node(t_stack_node **stack, int value);
 int				stack_len(t_stack_node *stack);
 t_stack_node	*find_smallest(t_stack_node	*stack);
+t_stack_node	*return_cheapest(t_stack_node *stack);
 
 // swap
 void			sa(t_stack_node **stack_a);
@@ -52,12 +58,12 @@ void			ss(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // rotate
 void			ra(t_stack_node **stack_a);
-void			ra(t_stack_node **stack_a);
+void			rb(t_stack_node **stack_b);
 void			rr(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // reverse_rotate
 void			rra(t_stack_node **stack_a);
-void			rra(t_stack_node **stack_a);
+void			rrb(t_stack_node **stack_b);
 void			rrr(t_stack_node **stack_a, t_stack_node **stack_b);
 
 // push
@@ -69,5 +75,10 @@ void			tiny_sort(t_stack_node **stack);
 int				stack_is_sorted(t_stack_node *stack);
 
 // push swap command
+void			push_swap(t_stack_node **stack_a, t_stack_node **stack_b);
+
+// push swap init
+void			set_current_position(t_stack_node *stack);
+void			init_nodes(t_stack_node *stack_a, t_stack_node *stack_b);
 
 #endif

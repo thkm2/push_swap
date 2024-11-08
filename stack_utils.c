@@ -6,7 +6,7 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:33:27 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/07 22:00:57 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/08 12:08:13 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,22 @@ t_stack_node	*find_smallest(t_stack_node	*stack)
 		stack = stack->next;
 	}
 	return (smallest);
+}
+
+t_stack_node	*return_cheapest(t_stack_node *stack)
+{
+	t_stack_node	*cheapest;
+	long			chp;
+
+	chp = LONG_MAX;
+	while (stack)
+	{
+		if (stack->push_price < chp)
+		{
+			chp = stack->push_price;
+			cheapest = stack;
+		}
+		stack = stack->next;
+	}
+	return (cheapest);
 }

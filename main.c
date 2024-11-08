@@ -6,13 +6,13 @@
 /*   By: kgiraud <kgiraud@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/02 14:49:50 by kgiraud           #+#    #+#             */
-/*   Updated: 2024/11/07 20:30:10 by kgiraud          ###   ########.fr       */
+/*   Updated: 2024/11/08 12:39:29 by kgiraud          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-#include <stdio.h>
+///
 void print_stack(t_stack_node *stack)
 {
 	if (!stack)
@@ -45,11 +45,9 @@ int	main(int ac, char **av)
 		else if (stack_len(stack_a) == 3)
 			tiny_sort(&stack_a);
 		else
-			// turk_algorithm
-			printf("en travaux...");
+			push_swap(&stack_a, &stack_b);
 	}
 	print_stack(stack_a); //
-	(void)stack_b; //
 	free_stack(&stack_a);
 	return (0);
 }
